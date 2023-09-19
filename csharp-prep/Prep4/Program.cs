@@ -10,7 +10,7 @@ class Program
         List<int>numberList = new List<int>();
         int number = 1;
         Console.WriteLine("Enter a list of numbers, type 0 when finished.");
-        while (number != 0);
+        while (number != 0)
         {
             Console.WriteLine("Enter a number:");
             string userInput = Console.ReadLine();
