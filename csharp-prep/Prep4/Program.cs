@@ -10,13 +10,16 @@ class Program
         List<int>numberList = new List<int>();
         int number = 1;
         Console.WriteLine("Enter a list of numbers, type 0 when finished.");
-        do
+        while (number != 0);
         {
             Console.WriteLine("Enter a number:");
             string userInput = Console.ReadLine();
             number = int.Parse(userInput);
-            numberList.Add(number);
-        }while (number != 0);
+            if (number !=0)
+            {
+                numberList.Add(number);
+            }
+        }
         
         //Calulate sum of list
         // int prevNumber = 0; - Testing
@@ -32,7 +35,7 @@ class Program
         Console.WriteLine($"The sum of the list is {totalN}.");
 
         //Compute Average
-        float avg = (float(totalN)) / numberList.Count;
+        float avg = ((float)totalN) / numberList.Count;
         Console.WriteLine($"The average is {avg}.");
 
         // Find Max
