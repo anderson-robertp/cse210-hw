@@ -8,22 +8,23 @@ class Program
         Random randomGenerator = new Random();
 
         // variables
-        str response == "yes"
-        int i = 0
+        string response = "yes";
+        int i = 0;
+        int guess = 0;
 
         //doWhile for gameplay
         do
         {
             // Gen magic number
-            int magicNumber = randomGenerator.Next)1,100);
+            int magicNumber = randomGenerator.Next(1,100);
 
             while (guess != magicNumber)
             {
                 Console.WriteLine("What is your guess? ");
-                str guessStr = Console.ReadLine();
-                int guess = intParse.(guessStr);
+                string guessStr = Console.ReadLine();
+                guess = int.Parse(guessStr);
 
-                if (guess = magicNumber)
+                if (guess == magicNumber)
                 {
                     Console.WriteLine("You guessed it!");
                 }
@@ -36,7 +37,7 @@ class Program
                     Console.WriteLine("Lower");
                 }
 
-                i++
+                i++;
             }
 
             Console.WriteLine($"You guessed {i} times.");
