@@ -1,19 +1,33 @@
 using System;
+using Microsoft.VisualBasic;
 
 public class PromptGenerator
 {
     // Declare variables
+    string[] _prompts = System.IO.File.ReadAllLines("prompt.txt");
+    public string _prompt;
+     
+    
+    
+
 
     // Constructor
+    PromptGenerator(){}
 
     // Methods
+    public string GeneratePrompt(){
+        /*
+        Method: loads file containing prompts and choose one randomly
 
-    /*
-    Method: Display job details from member variables
+        Variables: none
 
-    Variables: _company, _jobTitle, _startYear, endYear
+        Returns: prompt
 
-    Returns: nothing
+        */
+        var Random = new Random();
+        int index = Random.Next(0,_prompts.Length - 1);
+        _prompt = _prompts[index];
+        return _prompt;
 
-    */
-}
+    }
+}   

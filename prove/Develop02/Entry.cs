@@ -1,12 +1,13 @@
 using System;
+using System.Diagnostics.Contracts;
 
 public class Entry
 {
     // Declare variables
-    public string _entry
-    public string _prompt
-    DateTime currentDate = DateTime.Today;
-    string _date = currentDate;
+    public string _entry;
+    public string _promptEntry;
+    
+    public string _date;
 
     // Constructor
     public Entry()
@@ -14,7 +15,7 @@ public class Entry
 
     // Methods
 
-    public entry ConstructEntry()
+    public string ConstructEntry(_date, _promptEntry, _entry)
     {
         /*
         Method: Create entry from input
@@ -23,10 +24,10 @@ public class Entry
 
         Returns: entry
         */
-
-        Console.WriteLine($"{_prompt}")
-        _entry = Console.Read();
-        AddAnEntry()
+        
+        
+        
+        return fullEntry;
 
     }
 
@@ -39,6 +40,7 @@ public class Entry
 
         Returns: entry
         */
-        Console.WriteLine($"Date: {_date} - Prompt: {_prompt}\n{_entry}");
+        
+        Console.WriteLine($"Date: {_date} - Prompt: {_promptEntry}\n{_entry}");
     }
 }

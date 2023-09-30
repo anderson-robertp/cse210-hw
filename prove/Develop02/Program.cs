@@ -5,9 +5,10 @@ class Program
     static void Main(string[] args)
     {
        var quit = false;
+       DateTime currentDate = DateTime.Today;
         
 
-        while quit != true
+        while (quit != true)
         {
             Console.WriteLine("Please select one of the following options:");
             Console.WriteLine("1.Write");
@@ -20,6 +21,9 @@ class Program
 
             if (option == 1){
                 //Write
+                string query = ;
+                Console.WriteLine($"{query}");
+                
             }
             else if (option == 2){
                 //Display
@@ -31,7 +35,7 @@ class Program
                 //Save File
             }
             else if ( option == 5){
-                quit = true
+                quit = true;
             }
             else {
                 Console.WriteLine("Please enter a number between 1 and 5.");
