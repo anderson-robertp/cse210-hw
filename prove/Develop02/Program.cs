@@ -1,11 +1,18 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
+//using System.Net;
+//using System.Reflection.Emit;
 
 class Program
 {
     static void Main(string[] args)
     {
        var quit = false;
-       DateTime currentDate = DateTime.Today;
+       DateTime theCurrentTime = DateTime.Now;
+       string dateText = theCurrentTime.ToShortDateString();
+       PromptGenerator prompt = new PromptGenerator();
+       Entry entry = new Entry();
+       Journal journal = new Journal();
         
 
         while (quit != true)
@@ -21,18 +28,31 @@ class Program
 
             if (option == 1){
                 //Write
-                string query = ;
-                Console.WriteLine($"{query}");
                 
+                
+                string query = prompt.GeneratePrompt();
+                Console.WriteLine($"{query}");
+                string input = Console.ReadLine();
+                entry.ConstructEntry(dateText, query, input);
+                journal.AddAnEntry(entry);
             }
             else if (option == 2){
                 //Display
+                journal.DisplayAllEntries();
+                
             }
             else if (option == 3 ){
                 //Load file
+                Console.WriteLine("Please enter a file name: i.e. journal.txt:");
+                string filename = Console.ReadLine();
+                journal.LoadFromFile(filename);
+
             }
             else if (option == 4){
                 //Save File
+                Console.WriteLine("Please enter a name to save the file: i.e. journal.txt");
+                string filename = Console.ReadLine();
+                journal.SaveToFile(filename);
             }
             else if ( option == 5){
                 quit = true;

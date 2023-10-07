@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics.Contracts;
+using System.Security.Cryptography.X509Certificates;
 
 public class Entry
 {
@@ -15,7 +16,7 @@ public class Entry
 
     // Methods
 
-    public string ConstructEntry(_date, _promptEntry, _entry)
+    public string ConstructEntry(string date, string prompt, string entry)
     {
         /*
         Method: Create entry from input
@@ -24,6 +25,11 @@ public class Entry
 
         Returns: entry
         */
+        _date = date;
+        _promptEntry = prompt;
+        _entry = entry;
+
+        string fullEntry = _date + "~|~" + _promptEntry + "~|~" + _entry; 
         
         
         

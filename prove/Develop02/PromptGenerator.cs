@@ -12,7 +12,7 @@ public class PromptGenerator
 
 
     // Constructor
-    PromptGenerator(){}
+    public PromptGenerator(){}
 
     // Methods
     public string GeneratePrompt(){
