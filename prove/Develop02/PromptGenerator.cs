@@ -6,6 +6,7 @@ public class PromptGenerator
     // Declare variables
     string[] _prompts = System.IO.File.ReadAllLines("prompt.txt");
     public string _prompt;
+    public List<string> _todaysPrompts = new List<string>();
      
     
     
@@ -25,9 +26,18 @@ public class PromptGenerator
 
         */
         var Random = new Random();
-        int index = Random.Next(0,_prompts.Length - 1);
-        _prompt = _prompts[index];
+        var unique = false;
+        while (unique != true) { 
+            int index = Random.Next(0,_prompts.Length - 1);
+            _prompt = _prompts[index];
+            if (_todaysPrompts.Contains(_prompt)){
+                break;
+            }
+            else {
+                _todaysPrompts.Add(_prompt);
+                unique = true;
+            }
+        }
         return _prompt;
-
     }
 }   
