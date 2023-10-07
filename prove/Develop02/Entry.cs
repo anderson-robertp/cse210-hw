@@ -30,14 +30,14 @@ public class Entry
         _entry = entry;
 
         string fullEntry = _date + "~|~" + _promptEntry + "~|~" + _entry; 
-        
+        Console.WriteLine($"Entry Method ContructEntry var fullentry\n{fullEntry}");
         
         
         return fullEntry;
 
     }
 
-    public void DisplayEntry()
+    public void DisplayEntry(string fromJournal)
     {
         /*
         Method: Create entry from input
@@ -46,7 +46,11 @@ public class Entry
 
         Returns: entry
         */
-        
-        Console.WriteLine($"Date: {_date} - Prompt: {_promptEntry}\n{_entry}");
+        string line = fromJournal.ToString();
+        string[] parts = line.Split("~|~");
+        string displayDate = parts[0];
+        string displayPrompt = parts[1]; //Index out of Range: look at contructentry and add to journal
+        string displayEntry = parts[2];
+        Console.WriteLine($"Date: {displayDate} - Prompt: {displayPrompt}\n{displayEntry}");
     }
 }

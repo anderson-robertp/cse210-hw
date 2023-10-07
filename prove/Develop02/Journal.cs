@@ -3,7 +3,7 @@ using System;
 public class Journal
 {
     // Declare variables
-    public List<Entry> _journal = new List<Entry>();
+    public List<string> _journal = new List<string>();
     public Entry _entry = new Entry();
     
 
@@ -12,7 +12,7 @@ public class Journal
 
     // Methods
 
-    public void AddAnEntry(Entry entry)
+    public void AddAnEntry(string entry)
         {
             /*
             Method: Adds entry to journal
@@ -34,9 +34,9 @@ public class Journal
 
             Returns: nothing
             */
-            foreach (Entry entry in _journal)
+            foreach (string journalEntry in _journal)
                 {
-                    entry.DisplayEntry();
+                    _entry.DisplayEntry(journalEntry);
                 }
 
         }
@@ -59,9 +59,9 @@ public class Journal
                     string _promptEntry = parts[1];
                     string _entryPart = parts[2];
                     // Construct entry
-                    _entry.ConstructEntry(_date,_promptEntry,_entryPart);
+                    string fileEntry = _entry.ConstructEntry(_date,_promptEntry,_entryPart);
                     //add entry to journal
-                    _journal.Add(_entry);
+                    _journal.Add(fileEntry);
                 }
         }
 
@@ -76,7 +76,7 @@ public class Journal
         */
         using (StreamWriter outputFile = new StreamWriter(filename))
         {
-            foreach (Entry entry in _journal)
+            foreach (string entry in _journal)
             {
                 outputFile.WriteLine(entry);
             }

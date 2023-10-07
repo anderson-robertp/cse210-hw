@@ -1,7 +1,7 @@
 using System;
 using System.Security.Cryptography.X509Certificates;
-//using System.Net;
-//using System.Reflection.Emit;
+using System.Net;
+using System.Reflection.Emit;
 
 class Program
 {
@@ -10,9 +10,10 @@ class Program
        var quit = false;
        DateTime theCurrentTime = DateTime.Now;
        string dateText = theCurrentTime.ToShortDateString();
-       PromptGenerator prompt = new PromptGenerator();
-       Entry entry = new Entry();
-       Journal journal = new Journal();
+       PromptGenerator promptClass = new PromptGenerator();
+       Entry entryClass = new Entry();
+       Journal journalClass = new Journal();
+
         
 
         while (quit != true)
@@ -24,37 +25,39 @@ class Program
             Console.WriteLine("4.Save");
             Console.WriteLine("5.Quit");
             Console.WriteLine("What would you like to do?");
-            int option = Console.Read();
+            string option = Console.ReadLine();
 
-            if (option == 1){
+            if (option == "1"){
                 //Write
+                // Note loading individual entries in to journal or not displaying the correctly
                 
-                
-                string query = prompt.GeneratePrompt();
+                string query = promptClass.GeneratePrompt();
                 Console.WriteLine($"{query}");
                 string input = Console.ReadLine();
-                entry.ConstructEntry(dateText, query, input);
-                journal.AddAnEntry(entry);
+                string fullEntry = entryClass.ConstructEntry(dateText, query, input);
+                Console.WriteLine($"Main - variable entry:{fullEntry}");
+                journalClass.AddAnEntry(fullEntry);
             }
-            else if (option == 2){
+            else if (option == "2"){
                 //Display
-                journal.DisplayAllEntries();
+                journalClass.DisplayAllEntries();
                 
             }
-            else if (option == 3 ){
+            else if (option == "3"){
                 //Load file
                 Console.WriteLine("Please enter a file name: i.e. journal.txt:");
                 string filename = Console.ReadLine();
-                journal.LoadFromFile(filename);
+                journalClass.LoadFromFile(filename);
 
             }
-            else if (option == 4){
+            else if (option == "4"){
                 //Save File
+                //Only saving the word entry not he actually entry
                 Console.WriteLine("Please enter a name to save the file: i.e. journal.txt");
                 string filename = Console.ReadLine();
-                journal.SaveToFile(filename);
+                journalClass.SaveToFile(filename);
             }
-            else if ( option == 5){
+            else if ( option == "5"){
                 quit = true;
             }
             else {
