@@ -1,0 +1,19 @@
+Program class
+    While input != quit
+    User input "quit" or enter
+
+
+Scripture class
+    Responsibility: Keep track of the reference and the text of the Scripture.
+    Hides words and get the rendered diaplay of the text.
+    Methods:    Hides words
+                Renders text
+
+
+Referennce class
+    Responsibility: Keep track of the verse, chapter, and verse info.
+    Methods:
+
+Word class
+    Responsibility:Keeps track of a single word and if its displayed.
+    Check hidden
