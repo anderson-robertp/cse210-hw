@@ -4,6 +4,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop03 World!");
+        string exit = "noquit";
+        Scripture scrip = new Scripture();
+
+        while (exit != "quit"){
+            Console.Clear();
+            scrip.DisplayScripture();
+            Console.WriteLine("");
+            Console.WriteLine("Press enter or type quit to exit");
+            exit = Console.ReadLine();
+        }
     }
 }
