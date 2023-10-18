@@ -3,7 +3,7 @@ public class Reference{
 
     // Declare variables
     private string _book;
-    private string _chapter;
+    private int _chapter;
     private int _verse;
     private int _endVerse;
     private string _reference;
@@ -11,17 +11,17 @@ public class Reference{
     // Constructor
     public Reference(){
         // Plain constructor
-        _book = "";
-        _chapter = "";
-        _verse = 1;
+        _book = "John";
+        _chapter = 3;
+        _verse = 16;
     }
-    public Reference(string book, string chapter, int verse){
+    public Reference(string book, int chapter, int verse){
         //Constructor for a scripture with only one verse
         _book = book;
         _chapter = chapter;
         _verse = verse;
     }
-    public Reference(string book, string chapter, int verse, int endVerse){
+    public Reference(string book, int chapter, int verse, int endVerse){
         //Constructor for a scripture with multiple verses
         _book = book;
         _chapter = chapter;
@@ -33,7 +33,7 @@ public class Reference{
     }
 
     // Methods
-    //public Reference SetReference(string reference){
+    public void SetReference(string reference){
 
 
         /*
@@ -43,9 +43,9 @@ public class Reference{
 
         Returns: entry
         */
-        //List<string> ref = reference.Split(' ').ToList();
-        //return _reference;    
-    //}
+        _reference = reference;
+           
+    }
 
     public void DisplayReference(){
         /*

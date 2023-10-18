@@ -2,15 +2,13 @@ public class Word{
     //Tracks individual words and if they are hidden
 
     // Declare variables
-    private string[] _wordList;
+    
     private Boolean _isHidden = false;
     private string _word;
 
     // Constructor
-    public Word(){}
-
-    public Word(string[] wordList, int hiddenWord1, int hiddenword2, int hiddenWord3){
-
+    public Word(string word){
+        _word = word;
     }
     
     // Methods
@@ -24,6 +22,14 @@ public class Word{
         */
         string[] hiddenWord = wordList;
         return hiddenWord;
+        }
+
+        public void SetWord(string word){
+            _word = word;
+        }
+
+        public void DisplayWord(){
+            Console.Write($"{_word} ");
         }
         
 }
