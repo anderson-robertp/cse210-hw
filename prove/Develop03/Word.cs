@@ -10,26 +10,30 @@ public class Word{
     public Word(string word){
         _word = word;
     }
+    public Word(){}
     
     // Methods
-        public string[] HideWord2(string[] wordList){
-            /*
-        Method: Create entry from input
-
-        Variables: _entry _prompt
-
-        Returns: entry
-        */
-        string[] hiddenWord = wordList;
-        return hiddenWord;
-        }
-
         public void SetWord(string word){
             _word = word;
         }
 
         public void DisplayWord(){
-            Console.Write($"{_word} ");
+            Console.Write(_word);
+        }
+
+        public void Hide(){
+            _isHidden = true;
+            char[] chars = _word.ToCharArray();
+            for (int i = 0; i < chars.Length; i++)
+            {
+                //Console.Write(chars[i]); - for testing
+                chars[i] = '_';
+                //Console.WriteLine(chars[i]); - for testing
+                
+            }
+            string word = new string(chars);
+            //Console.WriteLine(word); - for testing
+            _word = word;
         }
         
 }
