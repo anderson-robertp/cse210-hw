@@ -8,12 +8,19 @@ class Program
         Scripture scrip = new Scripture();
 
         while (exit != "quit"){
-            //Console.Clear();
+            Console.Clear();
             scrip.DisplayScripture();
             Console.WriteLine("");
             Console.WriteLine("Press enter or type quit to exit");
             exit = Console.ReadLine();
-            scrip.HideRandomWord();
+            string next = scrip.IsCompletelyHidden();
+            if (next == "next"){
+                scrip.HideRandomWord();
+            }
+            else{
+                exit = "quit";
+            }
+            
         }
     }
 }

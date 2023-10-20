@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 public class Scripture{
@@ -6,10 +7,13 @@ public class Scripture{
     // Declare variables
     private Reference _reference = new Reference();
     private string _scripture;
-    private Boolean _isHidden = false;
+    //private Boolean _isHidden = false;
     private List<Word> _words = new List<Word>();
     private Word _word = new Word();
-    Random rand = new Random();
+    private Random _rand = new Random();
+    private int _randI;
+    private bool _used = true;
+    private List<int> _usedRand = new List<int>();
 
     // Constructor
     public Scripture(){
@@ -52,18 +56,22 @@ public class Scripture{
         Returns: 
         */
         
-        int randI = rand.Next(0, _words.Count);
-        Console.WriteLine($"{randI} {_words[randI]}");
-        _words[randI].Hide();
-        if (randI+1 < _words.Count() & randI+2 <= _words.Count()){
-            _words[randI+1].Hide();
-            _words[randI+2].Hide();
+        
+        _randI = PickRandom(_usedRand);
+        _usedRand.Add(_randI);
+        _usedRand.Add(_randI+1);
+        _usedRand.Add(_randI+2);
+        //Console.WriteLine($"{_randI} {_words[_randI]}");
+        _words[_randI].Hide();
+        if (_randI+1 < _words.Count() & _randI+2 <= _words.Count()){
+            _words[_randI+1].Hide();
+            _words[_randI+2].Hide();
         }
         
         
     }
 
-    public void IsCompletelyHidden(){
+    public string IsCompletelyHidden(){
         /*
         Method: checks if the scripture if completely hidden and exits program
 
@@ -71,7 +79,15 @@ public class Scripture{
 
         Returns: 
         */
-        if (!_words.Contains(false));
+        int count = _words.Count();
+        if (count == _usedRand.Count()){
+            string ifExit = "exit";
+            return ifExit;
+        }
+        else{
+            string ifExit = "next";
+            return ifExit;
+        }
     }
 
     public void LoadScripture(){
@@ -94,5 +110,23 @@ public class Scripture{
             _words.Add(_word);
             
         }
+    }
+
+    private int PickRandom(List<int> randomList){
+        
+        while (_used != false){
+            int rand = _rand.Next(0, _words.Count);
+            if (randomList.Contains(_randI) == true){
+                break;
+            }
+            else{
+                //randomList.Add(rand);
+                _used = false;
+                return rand;
+            } 
+        }
+        string randString = Console.ReadLine();
+        int randI = int.Parse(randString);
+        return randI;
     }
 }
