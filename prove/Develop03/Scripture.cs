@@ -10,7 +10,7 @@ public class Scripture{
     //private Boolean _isHidden = false;
     private List<Word> _words = new List<Word>();
     private Word _word = new Word();
-    private Random _rand = new Random();
+    //private Random _rand = new Random();
     private int _randI;
     private bool _used = true;
     private List<int> _usedRand = new List<int>();
@@ -53,19 +53,25 @@ public class Scripture{
 
         Variables: 
 
-        Returns: 
+        Returns: none
         */
         
         
         _randI = PickRandom(_usedRand);
-        _usedRand.Add(_randI);
-        _usedRand.Add(_randI+1);
-        _usedRand.Add(_randI+2);
-        //Console.WriteLine($"{_randI} {_words[_randI]}");
+        if (_randI > 0){
+            _usedRand.Add(_randI-1);
+            _words[_randI-1].Hide();
+        }        
+        //Console.WriteLine($"{_randI} {_words[_randI]}"); - for testing
+        //if (_randI < _words.Count()){
+        //    _words[_randI+1].Hide();
+        //    _usedRand.Add(_randI+1);
+        //}
         _words[_randI].Hide();
-        if (_randI+1 < _words.Count() & _randI+2 <= _words.Count()){
+        _usedRand.Add(_randI);
+        if (_randI+1 < _words.Count()){
             _words[_randI+1].Hide();
-            _words[_randI+2].Hide();
+            _usedRand.Add(_randI+1);
         }
         
         
@@ -113,20 +119,31 @@ public class Scripture{
     }
 
     private int PickRandom(List<int> randomList){
-        
+        //int rand;
+        Random _rand = new Random();
+        _used = true;
         while (_used != false){
-            int rand = _rand.Next(0, _words.Count);
-            if (randomList.Contains(_randI) == true){
-                break;
+            _randI = _rand.Next(0, _words.Count);
+            if (randomList.Contains(_randI-1) == false){
+                _used = false;
+            }
+            if (randomList.Contains(_randI) == false){
+                _used = false;
+            }
+            if (randomList.Contains(_randI+1) == false){
+                _used = false;
             }
             else{
                 //randomList.Add(rand);
-                _used = false;
-                return rand;
-            } 
+                _used = true;
+                
+            }
+            
         }
-        string randString = Console.ReadLine();
-        int randI = int.Parse(randString);
-        return randI;
+        return _randI;
+        //string randString = Console.ReadLine();
+        //int randI = int.Parse(randString);
+        //return randI;
+        
     }
 }
