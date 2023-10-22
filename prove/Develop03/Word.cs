@@ -3,7 +3,7 @@ public class Word{
 
     // Declare variables
     
-    private Boolean _isHidden = false;
+    //private Boolean _isHidden = false;
     private string _word;
 
     // Constructor
@@ -22,7 +22,7 @@ public class Word{
         }
 
         public void Hide(){
-            _isHidden = true;
+            //_isHidden = true;
             char[] chars = _word.ToCharArray();
             for (int i = 0; i < chars.Length; i++)
             {
