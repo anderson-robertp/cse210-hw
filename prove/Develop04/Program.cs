@@ -6,6 +6,7 @@ class Program
     {
         Activity active = new Activity();
         Breath breath = new Breath();
+        Reflect reflect = new Reflect();
         int choice = 0;
         int seconds;
 
@@ -29,6 +30,9 @@ class Program
                 active.Transition();
             }
             else if (choice == 2){
+                active.Transition();
+                seconds = reflect.ActivityIntro(choice);
+                reflect.ReflectAct(seconds);
                 active.Transition();
             }
             else if (choice == 3){

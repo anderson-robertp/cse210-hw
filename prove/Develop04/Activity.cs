@@ -3,13 +3,15 @@ public class Activity{
     //Variables
     protected int _duration;
     private string _activity;
-    private List<string> _animationList = new List<string>();
+    private List<string> _animationList = new List<string>(){
+        "|","/","-","\\","|","/","-","\\"
+    };
     protected int _choice;
     
     //Constructor
     public Activity(){}
 
-    public Activity(int choice)
+    public Activity(int choice){}
 
     //Methods
     public int ActivityIntro(int choice){
@@ -88,9 +90,9 @@ public class Activity{
         }
     }
 
-    public void Animation(){
+    public void Animation(int time){
         DateTime startTime = DateTime.Now;
-        DateTime futureTime = startTime.AddSeconds(10);
+        DateTime futureTime = startTime.AddSeconds(time);
 
         int i = 0;
         
@@ -98,8 +100,8 @@ public class Activity{
         while (DateTime.Now < futureTime)
         {
             string s = _animationList[i];
-            Console.Write($"s");
-            Thread.Sleep(1000);
+            Console.Write($"{s}");
+            Thread.Sleep(500);
             Console.Write("\b \b");
 
             i++;

@@ -3,9 +3,9 @@ public class Breath : Activity{
 
 
     //Constructors
-    public Breath(){}
-
     public Breath() : base(){}
+
+    //public Breath() : base(){}
 
 
     //Methods
