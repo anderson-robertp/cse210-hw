@@ -23,7 +23,7 @@ class Program
             choice = Convert.ToInt32(choiceStr);
             if (choice == 1){
                 active.Transition();
-                seconds = active.ActivityIntro(choice);
+                seconds = breath.ActivityIntro(choice);
                 breath.BreathingAct(seconds);
                 
                 active.Transition();
