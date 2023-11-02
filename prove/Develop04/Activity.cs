@@ -117,7 +117,11 @@ public class Activity{
        Console.WriteLine();
        Thread.Sleep(3000);
 
-       int i = 9;
+       Countdown(9);
+    }
+
+    public void Countdown(int count){
+        int i = count;
 
        while (i != -1)
        {
@@ -126,16 +130,5 @@ public class Activity{
         Console.Write("\b \b");
         i --;
        }
-    }
-
-    public void LoadAnimation(){
-        _animationList.Add("|");
-        _animationList.Add("/");
-        _animationList.Add("-");
-        _animationList.Add("\\");
-        _animationList.Add("|");
-        _animationList.Add("/");
-        _animationList.Add("-");
-        _animationList.Add("\\");
     }
 }

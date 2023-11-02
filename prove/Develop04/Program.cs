@@ -7,11 +7,11 @@ class Program
         Activity active = new Activity();
         Breath breath = new Breath();
         Reflect reflect = new Reflect();
+        Listing listing = new Listing();
         int choice = 0;
         int seconds;
 
-        active.LoadAnimation();
-        
+               
         while (choice != 4){
             Console.Clear();
             Console.WriteLine("Menu Options:");
@@ -37,6 +37,10 @@ class Program
             }
             else if (choice == 3){
                 active.Transition();
+                seconds = listing.ActivityIntro(choice);
+                listing.ListAct(seconds);
+                active.Transition();
+
             }
             else if (choice == 4){
                 break;
