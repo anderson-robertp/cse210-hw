@@ -6,8 +6,55 @@ public class Breath : Activity{
 
 
     //Methods
-    private void BreathingAct(){
-        Transition();
-        
+    public void BreathingAct(int time){
+        _duration = time;
+        Console.Clear();
+        GetReady();
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(_duration);
+
+        Thread.Sleep(1000);
+
+        while (DateTime.Now < endTime)
+        {
+            int i = 1;
+            int h = 1;
+            int o = 1;
+
+            Console.WriteLine("");
+            Console.WriteLine();
+            Console.Write("Breath in...");
+            while (i != 5)
+            {
+                Console.Write(i);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+                i ++;
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine();
+            Console.Write("Hold your breathe for...");
+            while (h != 8)
+            {
+                Console.Write(h);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+                h ++;
+            }
+            
+            Console.WriteLine("");
+            Console.WriteLine();
+            Console.Write("Breath out...");
+            while (o != 9)
+            {
+                Console.Write(o);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+                o ++;
+            }
+
+        }
+        ActivityOutro(1 , time);
     }
 }
