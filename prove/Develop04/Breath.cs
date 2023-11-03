@@ -10,6 +10,7 @@ public class Breath : Activity{
 
     //Methods
     public void BreathingAct(int time){
+        
         _duration = time;
         Console.Clear();
         GetReady();
@@ -20,42 +21,45 @@ public class Breath : Activity{
 
         while (DateTime.Now < endTime)
         {
-            int i = 1;
-            int h = 1;
-            int o = 1;
+            //int i = 1;
+            //int h = 1;
+            //int o = 1;
 
             Console.WriteLine("");
             Console.WriteLine();
             Console.Write("Breath in...");
-            while (i != 5)
+            Countdown(4);
+            /* while (i != 5)
             {
                 Console.Write(i);
                 Thread.Sleep(1000);
                 Console.Write("\b \b");
                 i ++;
-            }
+            }*/
 
             Console.WriteLine("");
             Console.WriteLine();
             Console.Write("Hold your breathe for...");
-            while (h != 8)
+            Countdown(8);
+            /*while (h != 8)
             {
                 Console.Write(h);
                 Thread.Sleep(1000);
                 Console.Write("\b \b");
                 h ++;
-            }
+            } */
             
             Console.WriteLine("");
             Console.WriteLine();
             Console.Write("Breath out...");
-            while (o != 9)
-            {
-                Console.Write(o);
-                Thread.Sleep(1000);
-                Console.Write("\b \b");
-                o ++;
-            }
+            Countdown(9);
+            //while (o != 9)
+            //{
+                //Console.Write(o);
+                //Thread.Sleep(1000);
+                //Console.Write("\b \b");
+                //o ++;
+            //}
 
         }
         ActivityOutro(1 , time);

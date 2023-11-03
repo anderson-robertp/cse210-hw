@@ -19,9 +19,9 @@ class Program
             Console.WriteLine("    2. Start reflecting activity");
             Console.WriteLine("    3. Start listing activity");
             Console.WriteLine("    4. Quit");
-            Console.WriteLine("Select a choice from the menu:");
+            Console.Write("Select a choice from the menu:");
             string choiceStr = Console.ReadLine();
-            choice = Convert.ToInt32(choiceStr);
+            choice = int.Parse(choiceStr);
             if (choice == 1){
                 active.Transition();
                 seconds = breath.ActivityIntro(choice);

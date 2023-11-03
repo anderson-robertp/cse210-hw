@@ -39,7 +39,7 @@ public class Listing : Activity{
         Countdown(9);
 
         while (DateTime.Now < endTime){
-            Console.WriteLine(":");
+            Console.Write(":");
             string answer = Console.ReadLine();
             _answers.Add(answer);
         }
