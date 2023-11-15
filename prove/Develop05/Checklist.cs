@@ -8,7 +8,7 @@ public class Checklist : Goal {
     // Constructor
     public Checklist() : base(){}
     public Checklist(string type) : base(type){}
-    public Checklist(string type,string name, string desc, int points, int bonus, int times, int completed) : base(type,name,desc,point){
+    public Checklist(string type,string name, string desc, int points, int bonus, int times, int completed) : base(type,name,desc,points){
         _bonusPoints = bonus;
         _times = times;
         _completed = completed;

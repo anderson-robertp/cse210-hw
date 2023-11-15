@@ -7,7 +7,7 @@ public class Simple : Goal
     public Simple(string type) : base (type){
         _isComplete = false;
     }
-    public Simple(string type,string name, string desc, int points, bool completed) : base(type,name,desc,point,completed){}
+    public Simple(string type,string name, string desc, int points, bool completed) : base(type,name,desc,points,completed){}
 
     // Methods
     public override void SetGoal(){

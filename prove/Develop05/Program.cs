@@ -12,6 +12,7 @@ class Program
         string goalChoice;
         int recordChoice;
         UI ui = new UI();
+        //string[] goalString;
 
         // Program
         while (choice != "7"){
@@ -72,8 +73,15 @@ class Program
                 Console.WriteLine("");
                 Console.Write("What filename would you like to save as? ");
                 string filename = Console.ReadLine();
+                //string[] goalString;
+                List<string> goalString = new List<string>();
                 File file = new File();
-                file.SaveToFile(points,goalList,filename);
+                foreach (Goal item in goalList)
+                {
+                    string convert = item.ToString();
+                    goalString.Append(convert);
+                }
+                file.SaveToFile(points,goalString,filename);
                 
             }
             else if (choice == "4"){
@@ -84,7 +92,7 @@ class Program
                 string[] goals = file.LoadFromFile(filename);
                 string pntsStr = goals[0];
                 points = int.Parse(pntsStr);
-                goals.RemoveAt(0);
+                goals.Skip(1);
 
                 foreach(string line in goals){
                     string [] parts = line.Split(":");
@@ -93,26 +101,26 @@ class Program
                     if(type == "simple"){
                         string name = goal[0];
                         string desc = goal[1];
-                        int points= goal[2];
-                        bool complete = goal[3];
-                        Simple simp = new Simple(type,name,desc,points,complete);
+                        int pnts= int.Parse(goal[2]);
+                        bool complete = bool.Parse(goal[3]);
+                        Simple simp = new Simple(type,name,desc,pnts,complete);
                         goalList.Add(simp);
                     }
                     else if(type == "eternal"){
                         string name = goal[0];
                         string desc = goal[1];
-                        int points= goal[2];
-                        Eternal eter = new Eternal(type,name,desc,points);
+                        int pnts= int.Parse(goal[2]);
+                        Eternal eter = new Eternal(type,name,desc,pnts);
                         goalList.Add(eter);
                     }
                     else if(type == "checklist"){
                         string name = goal[0];
                         string desc = goal[1];
-                        int points= goal[2];
-                        int bonus = goal[3];
-                        int times = goal[4];
-                        int completed = goal[5];
-                        Checklist check = new Checklist(type,name,desc,points,bonus,times,completed);
+                        int pnts= int.Parse(goal[2]);
+                        int bonus = int.Parse(goal[3]);
+                        int times = int.Parse(goal[4]);
+                        int completed = int.Parse(goal[5]);
+                        Checklist check = new Checklist(type,name,desc,pnts,bonus,times,completed);
                         goalList.Add(check);
                     }
 
@@ -126,7 +134,7 @@ class Program
             }
             else if (choice == "6"){
                 int j = 1;
-                foreach (Goal item in _goalList)
+                foreach (Goal item in goalList)
                 {
                     item.DisplayGoal(j);
                     j++;
@@ -136,10 +144,10 @@ class Program
                 Console.Write("Which goal would you like to record? ");
                 recordChoice = int.Parse(Console.ReadLine());
                 int k = 1;
-                foreach (Goal item in _goalList)
+                foreach (Goal item in goalList)
                 {
                     if(recordChoice == k){
-                        _points += item.RecordEvent();
+                        points += item.RecordEvent();
                     }
                     k++;
                 }

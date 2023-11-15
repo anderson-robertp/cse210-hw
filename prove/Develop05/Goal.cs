@@ -13,13 +13,23 @@ public class Goal
         _type = type;
     }
     public Goal(string type,string name, string desc, int points, bool completed){
+       // For Simple
         _type = type;
         _name = name;
         _desc = desc;
         _points = points;
         _isComplete = completed;
     }
-
+    public Goal(string type, string name, string desc, int points){
+        //For Eternal
+        _type = type;
+        _name = name;
+        _desc = desc;
+        _points = points;
+    }
+    
+    
+    
     // Methods
     public virtual void SetGoal(){}
 

@@ -2,19 +2,21 @@ public class File{
     // Variables
 
     // Constructor
+    public File(){}
 
     // Methods
 
-    public void SaveToFile(int points, list goals, string filename){
+    public void SaveToFile(int points, List<String> goals, string filename){
         using (StreamWriter outputFile = new StreamWriter(filename)){
             outputFile.WriteLine($"{points}");
-            foreach(goal in goals){
+            foreach(string goal in goals){
                 outputFile.WriteLine($"{goal}");
             }
         }
     }
 
-    public List LoadFromFile(string filename){
-        sting[] goals = System.IO.File.ReadAllLines(filename);
+    public string[] LoadFromFile(string filename){
+        string[] goals = System.IO.File.ReadAllLines(filename);
+        return goals;
     }
 }

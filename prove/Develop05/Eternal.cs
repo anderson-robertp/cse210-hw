@@ -5,7 +5,7 @@ public class Eternal : Goal
     // Constructor
     public Eternal() : base(){}
     public Eternal(string type) : base(type){}
-    public Eternal(string type,string name, string desc, int points) : base(type,name,desc,point){}
+    public Eternal(string type,string name, string desc, int points) : base(type,name,desc,points){}
 
     // Methods
     public override void SetGoal(){
