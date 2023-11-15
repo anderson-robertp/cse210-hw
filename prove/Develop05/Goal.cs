@@ -11,7 +11,13 @@ public class Goal
     public Goal(){}
     public Goal(string type){
         _type = type;
-        _isComplete = false;
+    }
+    public Goal(string type,string name, string desc, int points, bool completed){
+        _type = type;
+        _name = name;
+        _desc = desc;
+        _points = points;
+        _isComplete = completed;
     }
 
     // Methods
@@ -35,5 +41,10 @@ public class Goal
     }
     public bool CheckComplete(){
         return false;
+    }
+
+    public virtual string ToString(){
+        string goal = $"{_type}:{_name},{_desc},{_points},{_isComplete}";
+        return goal;
     }
 }

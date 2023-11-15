@@ -5,23 +5,25 @@ public class Eternal : Goal
     // Constructor
     public Eternal() : base(){}
     public Eternal(string type) : base(type){}
+    public Eternal(string type,string name, string desc, int points) : base(type,name,desc,point){}
 
     // Methods
-    public override void SetGoal()
-    {
+    public override void SetGoal(){
         Console.WriteLine("");
-        Console.Write("What is the name of your goal?");
+        Console.Write("What is the name of your goal? ");
         _name = Console.ReadLine();
         Console.WriteLine("");
-        Console.Write("What is a short description for the goal?");
+        Console.Write("What is a short description for the goal? ");
         _desc = Console.ReadLine();
         Console.WriteLine("");
-        Console.Write("How many points for completing this goal?");
+        Console.Write("How many points for completing this goal? ");
         _points = int.Parse(Console.ReadLine());
     }
-
-    public override int RecordEvent()
-    {
+    public override int RecordEvent(){
         return _points;
+    }
+    public virtual string ToString(){
+        string goal = $"{_type}:{_name},{_desc},{_points}";
+        return goal;
     }
 }
