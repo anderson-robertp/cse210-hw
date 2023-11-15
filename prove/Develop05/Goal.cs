@@ -53,7 +53,7 @@ public class Goal
         return false;
     }
 
-    public virtual string ToString(){
+    public override string ToString(){
         string goal = $"{_type}:{_name},{_desc},{_points},{_isComplete}";
         return goal;
     }

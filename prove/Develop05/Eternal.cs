@@ -22,7 +22,7 @@ public class Eternal : Goal
     public override int RecordEvent(){
         return _points;
     }
-    public virtual string ToString(){
+    public override string ToString(){
         string goal = $"{_type}:{_name},{_desc},{_points}";
         return goal;
     }
