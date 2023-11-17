@@ -7,11 +7,12 @@ class Program
         // Variables
         int points = 0;
         List<Goal> goalList = new List<Goal>();
-        List<Goal> archive = new List<Goal>();
+        //List<Goal> archive = new List<Goal>();
         string choice = "0";
         string goalChoice;
         int recordChoice;
         UI ui = new UI();
+        Character character = new Character();
         //string[] goalString;
 
         // Program
@@ -19,7 +20,8 @@ class Program
             
             // display point totals
             Console.WriteLine("");
-            Console.WriteLine($"You have {points} points.");
+            Console.WriteLine($"Level {character.GetLevel()} {character.GetClass()}");
+            Console.WriteLine($"You have {character.GetPoints()} points.");
             Console.WriteLine("");
 
             // User Interface
@@ -60,6 +62,7 @@ class Program
                 }
 
             }
+            // Display Goals
             else if (choice == "2"){
                 int i = 1;
                 foreach (Goal item in goalList)
@@ -67,8 +70,10 @@ class Program
                     item.DisplayGoal(i);
                     i++;
                 }
+                Thread.Sleep(3000);
                 Console.WriteLine();
             }
+            // Save to File
             else if (choice == "3"){
                 Console.WriteLine("");
                 Console.Write("What filename would you like to save as? ");
@@ -81,19 +86,26 @@ class Program
                     string convert = item.ToString();
                     goalString.Add(convert);
                 }
-                file.SaveToFile(points,goalString,filename);
+                string outChar = character.ToString();
+                file.SaveToFile(outChar,goalString,filename);
                 
             }
+            // Load from file
             else if (choice == "4"){
                 Console.WriteLine("");
                 Console.Write("What filename would you like to open? ");
                 string filename = Console.ReadLine();
                 File file = new File();
                 string[] goals = file.LoadFromFile(filename);
-                string pntsStr = goals[0];
-                points = int.Parse(pntsStr);
-                //goals.Skip(0);
+                string inChar = goals[0];
+                string[] charParts = inChar.Split(",");
+                int pnts = int.Parse(charParts[0]);
+                string inClass = charParts[1];
+                character.Reset(pnts,inClass);
+                
+                goalList = file.ConvertToGoals(goals);
 
+                /* Moved to File class
                 foreach(string line in goals.Skip(1)){
                     string [] parts = line.Split(":");
                     string type = parts[0];
@@ -125,13 +137,13 @@ class Program
                     }
 
                 }
+                */
             }
+            // Set Character
             else if (choice == "5"){
-                //remove a completed goal from list, it does not add points or complete goal
-                // add to an archived list
-                Console.WriteLine("achive completed goal");
-                Thread.Sleep(10000);
+                character.SetUp();
             }
+            // Record Event
             else if (choice == "6"){
                 int j = 1;
                 foreach (Goal item in goalList)
@@ -144,13 +156,23 @@ class Program
                 Console.Write("Which goal would you like to record? ");
                 recordChoice = int.Parse(Console.ReadLine());
                 int k = 1;
+                int level = character.GetLevel();
                 foreach (Goal item in goalList)
                 {
                     if(recordChoice == k){
-                        points += item.RecordEvent();
+                        int temp = item.RecordEvent();
+                        character.SetPoints(temp);
                     }
                     k++;
                 }
+                Console.WriteLine();
+                Console.WriteLine("Good job! You've completed a goal!");
+                Console.WriteLine();
+                if (character.GetLevel() > level)
+                {
+                    Console.WriteLine("Congrats! You leveled up!");
+                }
+                Thread.Sleep(3000);
             }
             else {}
         }  

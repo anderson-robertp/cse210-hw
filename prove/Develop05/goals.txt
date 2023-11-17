@@ -1,4 +1,5 @@
-2600
-simple:simple,simple goal,200,True
-eternal:eternal,eternal goal,300
-checklist:checklist,checklist,400,500,4,4
+400,Bard
+simple:simple goal,This is a simple goal.,100,True
+eternal:Eternal Goal,This is an eternal goal.,200
+checklist:Checklist,This is a checklist goal.,300,600,3,1
+simple:new simple goal,This is another simple goal,200,False
