@@ -79,7 +79,7 @@ class Program
                 foreach (Goal item in goalList)
                 {
                     string convert = item.ToString();
-                    goalString.Append(convert);
+                    goalString.Add(convert);
                 }
                 file.SaveToFile(points,goalString,filename);
                 
@@ -92,9 +92,9 @@ class Program
                 string[] goals = file.LoadFromFile(filename);
                 string pntsStr = goals[0];
                 points = int.Parse(pntsStr);
-                goals.Skip(1);
+                //goals.Skip(0);
 
-                foreach(string line in goals){
+                foreach(string line in goals.Skip(1)){
                     string [] parts = line.Split(":");
                     string type = parts[0];
                     string[] goal = parts[1].Split(",");

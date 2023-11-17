@@ -1,0 +1,4 @@
+2600
+simple:simple,simple goal,200,True
+eternal:eternal,eternal goal,300
+checklist:checklist,checklist,400,500,4,4
