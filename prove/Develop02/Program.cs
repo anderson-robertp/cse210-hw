@@ -34,9 +34,9 @@ class Program
                 string query = promptClass.GeneratePrompt();
                 Console.WriteLine($"{query}");
                 string input = Console.ReadLine();
-                string fullEntry = entryClass.ConstructEntry(dateText, query, input);
-                Console.WriteLine($"Main - variable entry:{fullEntry}");
-                journalClass.AddAnEntry(fullEntry);
+                entryClass.ConstructEntry(dateText, query, input);
+                //Console.WriteLine($"Main - variable entry:{fullEntry}");
+                journalClass.AddAnEntry(entryClass);
             }
             else if (option == "2"){
                 //Display
