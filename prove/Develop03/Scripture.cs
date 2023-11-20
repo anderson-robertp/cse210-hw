@@ -85,8 +85,12 @@ public class Scripture{
 
         Returns: ifExit
         */
-        int count = _words.Count() -1;
-        if (count == _usedRand.Count()){
+        int count = _words.Count();
+        if (count <= _usedRand.Count()){
+            foreach (Word item in _words)
+            {
+                item.Hide();
+            }
             string ifExit = "exit";
             return ifExit;
         }
@@ -123,7 +127,7 @@ public class Scripture{
         Random _rand = new Random();
         
         do {
-            _randI = _rand.Next(0, _words.Count+1);
+            _randI = _rand.Next(0, _words.Count);
             
             
         } while (_usedRand.Contains(_randI));
