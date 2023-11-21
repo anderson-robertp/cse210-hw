@@ -15,6 +15,10 @@ public class Listing : Activity{
     private Random _listRand = new Random();
 
     //Constructor
+    public Listing() : base(){
+        _activity = "Listing";
+        _desc = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+    }
     
 
     //Methods
@@ -31,12 +35,14 @@ public class Listing : Activity{
         int k = _listRand.Next(0, _listPrompt.Count);
         string prompt = _listPrompt[k];
         Console.WriteLine(prompt);
+        Console.WriteLine("Start listing in 10 seconds.");
         Console.WriteLine();
 
         Thread.Sleep(1000);
 
         //Countdown
         Countdown(9);
+        Console.WriteLine("Start listing.");
 
         while (DateTime.Now < endTime){
             Console.Write(":");

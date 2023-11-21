@@ -2,11 +2,12 @@ public class Activity{
     
     //Variables
     protected int _duration;
-    private string _activity;
+    protected string _activity;
     private List<string> _animationList = new List<string>(){
         "|","/","-","\\","|","/","-","\\"
     };
     protected int _choice;
+    protected string _desc;
     
     //Constructor
     public Activity(){}
@@ -14,10 +15,14 @@ public class Activity{
     public Activity(int choice){}
 
     //Methods
-    public int ActivityIntro(int choice){
+    public void ActivityIntro(int choice){
         Console.Clear();
-        int time;
+        //int time;
         _choice = choice;
+        Console.WriteLine($"Welcome to the {_activity} Activity.");
+        Console.WriteLine("");
+            Console.Write($"{_desc}");
+        /*
         if (_choice == 1){
             Console.WriteLine("Welcome to the Breathing Activity.");
             Console.WriteLine("");
@@ -36,8 +41,9 @@ public class Activity{
             Console.Write("This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
             
         }
-        time = SetDuration();
-        return time;
+        */
+        //time = SetDuration();
+        //return time;
     }
 
     public void ActivityOutro(int choice, int duration){
@@ -45,7 +51,7 @@ public class Activity{
         _choice = choice;
         _duration = duration;
 
-        if (_choice == 1){
+        /*if (_choice == 1){
             _activity = "Breathing";
         }
         else if (_choice == 2){
@@ -53,13 +59,14 @@ public class Activity{
         }
         else if (_choice == 3){
             _activity = "Listing";
-        }
+        }*/
         Console.WriteLine("");
         Console.WriteLine($"You have completed another {_duration} secomds of the {_activity} Activity.");
         Thread.Sleep(3000);
     }
 
     public int SetDuration(){
+        Console.WriteLine("");
         Console.WriteLine("");
         Console.Write("How long, in seconds, would you like you session?");
         string secondsStr = Console.ReadLine();

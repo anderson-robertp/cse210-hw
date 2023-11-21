@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         // Variables
-        int points = 0;
+        //int points = 0;
         List<Goal> goalList = new List<Goal>();
         //List<Goal> archive = new List<Goal>();
         string choice = "0";

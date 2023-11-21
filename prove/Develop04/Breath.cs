@@ -3,7 +3,10 @@ public class Breath : Activity{
 
 
     //Constructors
-    public Breath() : base(){}
+    public Breath() : base(){
+        _activity = "Breathing";
+        _desc = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
+    }
 
     //public Breath() : base(){}
 

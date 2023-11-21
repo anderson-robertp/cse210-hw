@@ -24,20 +24,23 @@ class Program
             choice = int.Parse(choiceStr);
             if (choice == 1){
                 active.Transition();
-                seconds = breath.ActivityIntro(choice);
+                breath.ActivityIntro(choice);
+                seconds = breath.SetDuration();
                 breath.BreathingAct(seconds);
                 
                 active.Transition();
             }
             else if (choice == 2){
                 active.Transition();
-                seconds = reflect.ActivityIntro(choice);
+                reflect.ActivityIntro(choice);
+                seconds = reflect.SetDuration();
                 reflect.ReflectAct(seconds);
                 active.Transition();
             }
             else if (choice == 3){
                 active.Transition();
-                seconds = listing.ActivityIntro(choice);
+                listing.ActivityIntro(choice);
+                seconds = listing.SetDuration();
                 listing.ListAct(seconds);
                 active.Transition();
 
