@@ -1,7 +1,7 @@
-public abstract class LootItem{
+public class LootItem{
     // Attributes
-    protected String _name;
-    protected String _desc;
+    protected string _name;
+    protected string _desc;
     protected string _rarity;
     protected string _itemType;
     
@@ -11,15 +11,16 @@ public abstract class LootItem{
         _name = name;
         _desc = desc;
         _rarity = rarity;
-        _itemType = "magicitem";
+        _itemType = "item";
     }
     
     //Methods
     public virtual void DisplayItem(){
-        Console.WriteLine($"Name: {_name} Rarity {_rarity}");
+        Console.WriteLine($"Name: {_name} Rarity: {_rarity}");
+        Console.WriteLine($"{_desc}");
     }
     public override string ToString(){
-        string itemString = "";
+        string itemString = $"{_itemType},{_name},{_desc},{_rarity}";
         return itemString;
     }
 }

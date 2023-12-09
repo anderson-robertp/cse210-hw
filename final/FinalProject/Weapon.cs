@@ -1,12 +1,12 @@
 public class Weapon : LootItem{
     // Attributes
-    protected int _damage;
-    protected int _bonus;
+    protected string _damage;
+    protected string _bonus;
     protected string _type;
     
     //Constructor
     public Weapon() : base(){}
-    public Weapon(string name, string desc, string rarity, int damage, int bonus, string type) : base(name,desc,rarity){
+    public Weapon(string name, string desc, string rarity, string damage, string bonus, string type) : base(name,desc,rarity){
         _damage = damage;
         _bonus = bonus;
         _type = type;
@@ -15,10 +15,12 @@ public class Weapon : LootItem{
 
     //Methods
     public override void DisplayItem(){
-        Console.WriteLine($"Name: {_name} Rarity {_rarity}");
+        Console.WriteLine($"Name: {_name} Rarity: {_rarity} {_type}");
+        Console.WriteLine($"Bonus: {_bonus} Damage: {_damage}");
+        Console.WriteLine($"{_desc}");
     }
     public override string ToString(){
-        string itemString = "";
+        string itemString = $"{_itemType},{_name},{_desc},{_rarity},{_damage},{_bonus},{_type}";
         return itemString;
     }
 }
