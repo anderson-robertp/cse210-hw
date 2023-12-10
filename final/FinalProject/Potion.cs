@@ -11,8 +11,11 @@ public class Potion : LootItem{
 
     //Methods
     public override void DisplayItem(){
-        Console.WriteLine($"Name: {_name} Rarity {_rarity} {_healing}");
+        Console.WriteLine("");
+        Console.WriteLine($"Name: {_name}, {_rarity} potion.");
+        Console.WriteLine($"Healing: {_healing}");
         Console.WriteLine($"{_desc}");
+        Console.WriteLine("");
     }
     public override string ToString(){
         string itemString = $"{_itemType},{_name},{_desc},{_rarity},{_healing}";

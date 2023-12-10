@@ -8,15 +8,16 @@ public class UI
     // Methods
     public int MainMenu(){
         int choice;
-        Console.WriteLine("Welcome to Rollable Tables");
-        Console.WriteLine("");
+        
         Console.WriteLine("Please choose an action:");
-        Console.WriteLine(" 1.Roll for Chest");
+        Console.WriteLine(" 1.Roll for Chest.");
         Console.WriteLine(" 2.Roll for Item");
         Console.WriteLine(" 3.Add an Item");
         Console.WriteLine(" 4.Load/Save Items"); // For testing
         Console.WriteLine(" 5.Display Items"); // For testing
         Console.WriteLine(" 6.Quit");
+        Console.WriteLine("");
+        Console.Write("What would you like to do? ");
         choice = int.Parse(Console.ReadLine());
         return choice;
     }
@@ -28,6 +29,8 @@ public class UI
         Console.WriteLine(" 3.Potion");
         Console.WriteLine(" 4.Magic Item");
         Console.WriteLine(" 5.Exit");
+        Console.WriteLine("");
+        Console.Write("What would you like to do? ");
         choice = int.Parse(Console.ReadLine());
         return choice;
     }
@@ -142,14 +145,15 @@ public class UI
         LootItem lootItem = new LootItem(name,desc,rarity);
         return lootItem;
     }
-    public int ChestMenu(){
-        Console.WriteLine("Select an option to roll for a chest.");
+    public int RarityMenu(){
+        
         Console.WriteLine(" 1.Common");
         Console.WriteLine(" 2.Uncommon");
         Console.WriteLine(" 3.Rare");
         Console.WriteLine(" 4.Legendary");
-        Console.WriteLine(" 5.Random");
-        Console.WriteLine(" 6.Exit");
+        Console.WriteLine(" 5.Exit");
+        Console.WriteLine("");
+        Console.Write("What would you like to do? ");
         int choice = int.Parse(Console.ReadLine());
         return choice;
     }
@@ -159,9 +163,15 @@ public class UI
         Console.WriteLine(" 2.Armor");
         Console.WriteLine(" 3.Potion");
         Console.WriteLine(" 4.Magic Item");
-        Console.WriteLine(" 5.Quit");
+        Console.WriteLine(" 5.Exit");
+        Console.WriteLine("");
+        Console.Write("What would you like to do? ");
         int choice = int.Parse(Console.ReadLine());
         return choice;
     }
+    
+    
+    public void DisplayMenu(){
 
+    }
 }

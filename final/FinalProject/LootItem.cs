@@ -16,8 +16,10 @@ public class LootItem{
     
     //Methods
     public virtual void DisplayItem(){
-        Console.WriteLine($"Name: {_name} Rarity: {_rarity}");
+        Console.WriteLine("");
+        Console.WriteLine($"Name: {_name}, {_rarity} item.");
         Console.WriteLine($"{_desc}");
+        Console.WriteLine("");
     }
     public override string ToString(){
         string itemString = $"{_itemType},{_name},{_desc},{_rarity}";

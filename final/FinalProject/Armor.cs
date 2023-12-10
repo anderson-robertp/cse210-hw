@@ -13,9 +13,11 @@ public class Armor : LootItem{
 
     //Methods
     public override void DisplayItem(){
-        Console.WriteLine($"Name: {_name} Rarity: {_rarity}");
-        Console.WriteLine($"Bonus: {_bonus} Damage: {_defense}");
+        Console.WriteLine("");
+        Console.WriteLine($"Name: {_name}, a {_rarity} Armor.");
+        Console.WriteLine($"Bonus: {_bonus} Defense: {_defense}");
         Console.WriteLine($"{_desc}");
+        Console.WriteLine("");
     }
     public override string ToString(){
         string itemString = $"{_itemType},{_name},{_desc},{_rarity},{_defense},{_bonus}";

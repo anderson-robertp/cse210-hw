@@ -1,1 +1,101 @@
-weapon,sword,sword,sword,sword,sword,sword,0
+weapon,Longsword,just a common longsword,Common,1D8,none,slashing,4
+weapon,ShortSword,just a common longsword,Common,1D6,none,slashing,8
+weapon,Longbow,just a common longbow,Common,1D8,none,piercing,12
+weapon,Shortbow,just a common shortbow,Common,1D6,none,piercing,16
+weapon,Mace,just a common mace,Common,1D8,none,bludgeoning,20
+weapon,Axe,just a common axe,Common,1D8,none,slashing,24
+weapon,Dagger,just a common dagger,Common,1D4,none,piercing,28
+weapon,Staff,just a common staff,Common,1D6,none,magic,32
+weapon,Warhammer,just a common warhammer,Common,1D8,none,bludgeoning,36
+weapon,Wand,just a common wand,Common,1D4,none,magic,40
+weapon,Rapier,just a common rapier,Common,1D8,none,piercing,44
+weapon,Scythe,just a common scythe,Common,2D4,none,slashing,48
+weapon,Steel Dagger,A finely crafted dagger with a razor-sharp edge,Uncommon,1D4,+1,piercing,51
+weapon,Bronze Axe,A finely crafted axe with a bronze head. Though less durable than steel it provides a balance of weight and cutting power.,Uncommon,1D8,+1,slashing,54
+weapon,Uncommon Longbow,This bow is made from the wood of a rare magical tree granting it increased accuracy and distance. It is favored by skilled archers.,Uncommon,1D8,+1,piercing,57
+weapon,Silver Rapier,A rapier forged from silver known for its exceptional sharpness and effectiveness against supernatural creatures. Its intricate hilt adds a touch of elegance.,Uncommon,1D8,+1,piercing,60
+weapon,Thunderstruck Axe,An axe with a thunderous aura,Uncommon,1d8+1d6,+1,slashing and thunder,63
+weapon,Frostbite Blade,A sword with a blade that can freeze enemies,Uncommon,1d8+1d6,+1,slashing and cold,66
+weapon,Venomous Dagger,A dagger coated with a potent venom,Uncommon,1d4+1d6,+1,piercing and poison,69
+weapon,Flaming Whip,A whip that crackles with magical flames,Uncommon,1d6+1d6,+1,bludgeoning and fire,72
+weapon,Moonstone Bow,A bow crafted from enchanted moonstones,Uncommon,1d8+1d6,+1,piercing and magic,75
+weapon,Spectral Crossbow,A crossbow that shoots spectral bolts,Uncommon,1d6+1d6,+1,piercing and radient,78
+weapon,Blazing Halberd,A halberd with a burning edge,Uncommon,2d4+1d6,+1,slashing and fire,81
+weapon,Acidic Javelin,A javelin that leaves a corrosive trail,Uncommon,1d6+1d6,+1,piercing and poison,84
+weapon,adiant Warhammer,A warhammer radiating divine energy,Uncommon,1d8+1d6,+1,bludgeoning and radient,87
+weapon,Cosmic Hammer,Forged from the remnants of a fallen star, the Cosmic Hammer channels the energy of the cosmos with each mighty swing. Its weight defies logic, and its impact leaves a trace of celestial brilliance,Rare,1d8+2d6,+2,bludgeoning and radient,88
+weapon,Celestial Wand,A wand infused with celestial energy. Capable of casting powerful spells of light and healing.,Rare,1d8+2d6,+2,magic,89
+weapon,Shadow Blade,Crafted from the essence of the shadows. This blade allows its wielder to move stealthily and strike with the darkness itself.,Rare,1d8+2d8,+2,slashing and necrotic,90
+weapon,Artifact Bow,An ancient bow with magical properties. Capable of shooting arrows with incredible precision and power.,Rare,1d8+2d6,+2,piercing and magic,91
+weapon,Enchanted Staff,A staff imbued with enchantments. Granting its wielder the ability to cast a variety of magical spells.,Rare,1d8+2d6,+2,magic,92
+weapon,Infernal Scythe,A scythe forged in the cosmic fires of the inferno. Able to harvest the souls of its victims.,Legendary,2d4+3d6,+3,slashing fire and necrotic,93
+weapon,Dimensional Rapier,This rapier has the ability to cut through the fabric of dimensions. Making it a deadly weapon against both mortal and otherworldly foes.,Legendary,1d8+3d6,+3,piercing and radient,94
+weapon,Titanic Greatclub,A massive greatclub of mythical proportions said to have been wielded by giants. Its sheer size grants immense crushing power.,Legendary,2d6+3d6,+3,bludgeoning and force,95
+weapon,Dragonbone Katana,A katana crafted from the bones of a powerful dragon granting the weapon both sharpness and a touch of draconic magic.,Legendary,1d10+3d6,+3,slashing and your choice of elemental,96
+armor,Leather Armor,Simple leather protection,Common,5,N/A,5
+armor,Chainmail,Interlocking metal rings,Common,8,N/A,10
+armor,Cloth Robes,Simple cloth protection,Common,3,N/A,15
+armor,Leather Vest,Light leather chest protection,Common,4,N/A,20
+armor,Wooden Shield,Basic wooden shield,Common,5,N/A,25
+armor,Chain Shirt,Light chainmail shirt,Common,6,N/A,30
+armor,Padded Armor,Armor with padded layers,Common,5,N/A,35
+armor,Studded Leather,Leather with added studs,Common,7,N/A,40
+armor,Buckler,Small round shield,Common,4,N/A,45
+armor,Tunic and Pants,Simple cloth outfit,Common,2,N/A,50
+armor,Iron Helmet,Basic iron head protection,Common,3,N/A,55
+armor,Brass Cuirass,Chest armor made of brass,Common,6,N/A,60
+armor,Elven Chain,Finely crafted chainmail of elven design,Uncommon,9,+1,63
+armor,Shadow Cloak,A dark cloak that grants enhanced stealth abilities,Uncommon,14,+1,65
+armor,Scale Mail,Armor made of interlocking metal scales,Uncommon,8,+1,68
+armor,Gnomish Goggles,Magical goggles that enhance perception,Uncommon,3,+1,70
+armor,Dragonhide Robe,Made from the scales of a dragon,Uncommon,10,+1,72
+armor,Silk Robe,Luxurious robe made of enchanted silk,Uncommon,5,+1,74
+armor,Ebony Shield,Dark wooden shield reinforced with metal, Uncommon,7,+1,75
+armor,Spider-silk Cloak,Cloak woven from the silk of giant spiders,Uncommon,6,+1,76
+armor,Celestial Armor,Infused with celestial power, Rare,18,+2,78
+armor,Legendary Plate,Forged by a legendary blacksmith,Rare,20,+2,80
+armor,Enchanted Shield,Magically reinforced shield,Rare,15,+2,82
+armor,Mythril Chain,Armor made from rare and lightweight mythril,Rare,17,+2,84
+armor,Frostbite Mail,Armor that provides resistance to cold damage,Rare,16,+2,86
+armor,Dwarven Forgeplate,Sturdy plate armor crafted by skilled dwarven smiths,Rare,19,+2,88
+armor,Moonlight Cloak,Cloak that grants the ability to blend with moonlight,Rare,13,+2,90
+armor,Ethereal Robes,Robes that phase in and out of the ethereal plane,Rare,14,+2,92
+armor,Aegis of the Ancients,An ancient shield said to have divine protection, Legendary,25,+3,93
+armor,Divine Regalia,Armor adorned with symbols of divine power,Legendary,23,+3,95
+armor,Dragonlord's Scales,Scales from an ancient dragon offering immense protection,Legendary,27,+3,96
+armor,Spectral Garb,Armor woven from ethereal threads granting invisibility,Legendary,22,+3,98
+potion,Lesser Healing Potion,Regular healing potion,common,2d4+2,10
+potion,Lesser Magic Restoration,Restores 1 spell slot up to level 2,common,N/A,20
+potion,Healing Potion,A better healing potion,Uncommon,3d6+3,30
+potion,Magic Restoration,Restores 2 spell slots up to level 3 or 1 spell slot up to level 5,Uncommon,N/A,40
+potion,Greater Healing Potion,The best healing potion.,rare,4d8+4,50
+potion,Greater Magic Restoration,Restores 3 spell slots up yo level 4. 2 spell slots up to level 6 or 1 spell slot up to level 9,rare,N/A,60
+potion,Death Ward,If you would drop below or to zero hit points drop regain half of your hitpoints,legendary,N/A,80
+item,Traveler's Backpack,A basic backpack for carrying essentials,Common,1
+item,Simple Torch,Provides light in the darkness,Common,5
+item,Scroll of Identify,Reveals the properties of magical items,Common,10
+item,Copper Coin,A basic unit of currency,Common,15
+item,Worn Leather Gloves,Basic hand protection,Common,20
+item,Dried Rations,Non-perishable food for the journey,Common,25
+item,Wooden Amulet,A simple amulet made from wood,Common,30
+item,Mending Kit,Repairs torn clothing and simple gear,Common,35
+item,Enchanted Quill,A quill that never runs out of ink,Uncommon,40
+item,Elixir of Invisibility,Grants temporary invisibility,Uncommon,45
+item,Lockpicking Tools,Tools for picking locks and disabling traps,Uncommon,50
+item,Whispering Stone,A magical stone that allows silent communication,Uncommon,55
+item,Amulet of Resistance,Provides resistance to a specific type of damage,Uncommon,60
+item,Bag of Holding,A small bag with a magically expanded interior,Uncommon,65
+item,Spyglass,Enhances vision at a distance,Uncommon,70
+item,Mask of the Trickster,A mask that grants proficiency in deception,Uncommon,75
+item,Gem of Teleportation,Allows a one-time teleportation to a known location,Rare,77
+item,Book of Ancient Lore,Contains forgotten knowledge and secrets,Rare,79
+item,Orb of Elemental Control,Grants limited control over elemental forces,Rare,80
+item,Scepter of the Arcane,Enhances spellcasting abilities,Rare,82
+item,Soulbound Blade,A weapon linked to the soul of its wielder,Rare,84
+item,Crown of Command,Bestows authority and command,Rare,86
+item,Cloak of Displacement,Causes attacks to frequently miss the wearer,Rare,88
+item,Mirror of Illusions,Creates illusions that can deceive enemies,Rare,90
+item,Crystal Ball of Seeing,Allows scrying and glimpses into distant places,Legendary,92
+item,The Heartstone,A powerful artifact with unknown properties,Legendary,94
+item,Aegis of Divinity,Grants protection and immunity to certain effects,Legendary,96
+item,Tome of Eternal Wisdom,Contains knowledge beyond mortal comprehension,Legendary,98
